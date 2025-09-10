@@ -1,0 +1,41 @@
+<svg width="800" height="900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#000" stroke-width="2" fill="none">
+	<rect width="800" height="900" rx="10" ry="10" stroke-width="5"/>
+	<g id="b">
+		<path id="a" d="M0 100h800"/>
+		<use xlink:href="#a" y="100"/>
+		<use xlink:href="#a" y="200"/>
+		<use xlink:href="#a" y="300"/>
+	</g>
+	<use xlink:href="#b" y="400"/>
+	<g id="d">
+		<path id="c" d="M100 0v400"/>
+		<use xlink:href="#c" x="100"/>
+		<use xlink:href="#c" x="200"/>
+		<use xlink:href="#c" x="300"/>
+		<use xlink:href="#c" x="400"/>
+		<use xlink:href="#c" x="500"/>
+		<use xlink:href="#c" x="600"/>
+	</g>
+	<use xlink:href="#d" y="500"/>
+	<path id="e" stroke="#666" stroke-dasharray="5,5" d="M300 0l200 200M500 0L300 200"/>
+	<use xlink:href="#e" y="700"/>
+	<g id="g">
+		<path id="f" stroke-linecap="round" d="M85 195h10v-10M115 195h-10v-10M85 205h10v10M115 205h-10v10"/>
+		<use xlink:href="#f" x="600"/>
+	</g>
+	<g id="h">
+		<use xlink:href="#f" x="-100" y="100"/>
+		<use xlink:href="#f" x="100" y="100"/>
+		<use xlink:href="#f" x="300" y="100"/>
+		<use xlink:href="#f" x="500" y="100"/>
+		<use xlink:href="#f" x="700" y="100"/>
+	</g>
+	<use xlink:href="#g" y="500"/>
+	<use xlink:href="#h" y="300"/>
+	<g id="t" fill="#333" stroke-width="0" font-family="隶书" font-size="60">
+		<text x="120" y="470" transform="rotate(-90 150 450)">楚</text>
+		<text x="220" y="470" transform="rotate(-90 250 450)">河</text>
+		<text x="620" y="470" transform="rotate(90 650 450)">漢</text>
+		<text x="520" y="470" transform="rotate(90 550 450)">界</text>
+	</g>
+</svg>

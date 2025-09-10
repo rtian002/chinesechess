@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#chess {
+				width: 800px;
+				height: 900px;
+				padding: 5px;
+				border: 5px solid #000;
+				border-radius: 5px;
+				background: url(chess.svg) 5px 5px no-repeat;
+				background-position: 5px 5px;
+				background-size: 800px 900px;
+				background-repeat: no-repeat;
+				position: relative;
+				margin: 50px;
+			}
+
+			#test{
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				background-color: rgba(255, 0, 0, 0.3);
+				left: 165px;
+				top: 65px;
+				z-index: -99;
+				border-radius: 40px;
+				transition: opacity 1s ease;
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="chess">
+			<div id="test"></div>
+		</div>
+		<script>
+			const test=document.querySelector('#test');
+			const svgDom = document.querySelector('#chess');
+			async function loadAndModifySvg(svgUrl, dom) {
+				try {
+					// Fetch the SVG file
+					const response = await fetch(svgUrl);
+					const svgText = await response.text();
+					// Parse the SVG string to modify its content
+					const parser = new DOMParser();
+					const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
+					// Modify SVG styles (example: change fill color of all paths to red)
+					const svgNode = svgDoc.querySelector('#t');
+					svgNode.style.fill = '#369';
+					// Serialize the modified SVG back to a string
+					const serializer = new XMLSerializer();
+					const modifiedSvgText = serializer.serializeToString(svgDoc.documentElement);
+					// Encode the SVG string to a base64 data URL
+					const svgDataUrl = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(modifiedSvgText)));
+					// Set the background of the specified div to the modified SVG
+					dom.style.backgroundImage = `url(${svgDataUrl})`;
+				} catch (error) {
+					console.error('Error loading or modifying SVG:', error);
+				}
+			}
+			// Usage example
+			// loadAndModifySvg('chess.svg', svgDom);
+			svgDom.addEventListener('click',process);
+
+			function getPoint(e) {
+				const ev = e || window.Event;
+				const [x, y] = [ev.offsetX - 5, ev.offsetY - 5];
+				var cx = (x + 50) % 100;
+				var cy = (y + 50) % 100;
+				if (cx > 10 && cx < 90 && cy > 10 && cy < 90) {
+					var xx = ~~((x + 50) / 100);
+					var yy = ~~((y + 50) / 100);
+					return [xx, yy];
+				}
+				return false;
+			}
+
+			function process(ev) {
+				let pot = getPoint(ev);
+				if (pot) {
+					test.style.opacity=1;
+					test.style.left=(pot[0]*100-35)+'px';
+					test.style.top=(pot[1]*100-35)+'px';
+				}else{
+						test.style.opacity=0;
+				}
+			}
+			// svgDom.addEventListener('mousemove', process,true);
+		</script>
+		
+		
+	</body>
+</html>

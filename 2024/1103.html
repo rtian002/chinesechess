@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+			<link rel="stylesheet" href="1103.css">
+			<script src="Maps1024.js"></script>
+			<script src="jspdf.jpg.min.js"></script>
+				<script src="dom-to-image.min.js"></script>
+			
+	</head>
+	<body>
+		<div id="demo">
+			<div class="box box1"><div id="aside1" class="res"></div></div>
+			<div class="box box4">
+				<div id="aside5">
+					<div class="tit" id="tit1">红方</div>
+					<div class="tit" id="tit2">黑方</div>
+					<div class="hislist"><ol class="hisol" id="hisol"></ol></div>
+					
+				</div>
+			</div>
+			<div class="box box3">
+				<div id="aside2">
+					<button id="btn4" class="btn btn4">开始</button>
+					<button id="btn-1" class="btn">重置棋局</button>
+					<button id="btn3" class="btn">悔棋</button>
+					<button id="btn6" class="btn">演示解局</button>
+					<button id="btn1" class="btn">编辑棋局</button>
+					<button id="btn2" class="btn">导出棋局</button>
+					<button id="btn-2" class="btn">保存棋局</button>
+					<button id="btn5" class="btn">显示余子</button>
+					<button id="btn7" class="btn">左右翻转</button>
+					<button id="btn8" class="btn">上下翻转</button>
+					<button id="btn9" class="btn">黑红调换</button>
+					<div class="hisbtn">
+					<button id="btn10" class="btn">历史记录</button>
+					<div class="hisnav">
+						<div class="playlist pre">⏮</div>
+						<div class="playlist start">⏯</div>
+						<div class="playlist next">⏭︎</div>
+					</div>
+					<ol class="hisaside"></ol>
+					</div>
+				</div>
+			</div>
+			<div class="box box2">
+				<div id="aside3"></div>
+				<div id="aside4"></div>
+			
+			<div id="main">
+				<table id="blank-0" cellpadding='0' cellspacing="0">
+					<tr><td></td><td></td><td></td><td><hr class="x"></td><td></td><td></td><td></td><td></td></tr>
+					<tr><td></td><td class="z1"></td><td></td><td><hr class="y"></td><td></td><td></td><td></td><td class="z1"></td></tr>
+					<tr><td></td><td class="z2"></td><td class="z1"></td><td></td><td class="z1"></td><td></td><td class="z1"></td><td class="z2"></td></tr>
+					<tr><td class="z2"></td><td></td><td class="z2"></td><td></td><td class="z2"></td><td></td><td class="z2"></td><td class="z1 z3"></td></tr>
+					<tr><td colspan="8"></td></tr>
+					<tr><td></td><td></td><td class="z1"></td><td></td><td class="z1"></td><td></td><td class="z1"></td><td class="z1 z4"></td></tr>
+					<tr><td class="z2"></td><td class="z1"></td><td class="z2"></td><td></td><td class="z2"></td><td></td><td class="z2"></td><td class="z1"></td></tr>
+					<tr><td></td><td class="z2"></td><td></td><td><hr class="x"></td><td></td><td></td><td></td><td class="z2"></td></tr>
+					<tr><td></td><td></td><td></td><td><hr class="y"></td><td></td><td></td><td></td><td></td></tr>
+				</table>
+				<div id="blank-2"></div>
+				<div id="blank-1">
+					<div class="activeqz hidden"><div></div></div>
+					<div class="activeqz moveqz hidden"><div></div></div>
+				</div>
+			</div></div>
+		</div>
+		<div id="res">
+		</div>
+		<script src="chess20231027.js"></script>
+		<script src="events.js"></script>
+		<script src="test2.js"></script>
+		<script src="1103.js"></script>
+		
+	</body>
+</html>
